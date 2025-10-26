@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Stream Dashboard</title>
+</head>
+<body>
+  <h1>YouTube Stream Dashboard</h1>
+
+  <form id="streamForm">
+    <label>YouTube Stream Key:</label><br>
+    <input type="text" id="streamKey" placeholder="Enter your YouTube stream key" size="60"><br><br>
+
+    <label>Video URL:</label><br>
+    <input type="text" id="videoUrl" placeholder="Enter video URL" size="60"><br><br>
+
+    <label>Orientation:</label><br>
+    <select id="orientation">
+      <option value="none">Horizontal</option>
+      <option value="transpose1">Vertical Clockwise</option>
+      <option value="transpose2">Vertical Counterclockwise</option>
+    </select><br><br>
+
+    <button type="submit">Start Streaming</button>
+    <button type="button" id="stopBtn">Stop Streaming</button>
+  </form>
+
+  <h2>Logs:</h2>
+  <pre id="log" style="background:#f0f0f0;padding:10px;height:300px;overflow:auto;"></pre>
+
+  <script>
+    const form = document.getElementById('streamForm');
+    const stopBtn = document.getElementById('stopBtn');
+    const log = document.getElementById('log');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const streamKey = document.getElementById('streamKey').value;
+      const videoUrl = document.getElementById('videoUrl').value;
+      const orientation = document.getElementById('orientation').value;
+
+      const res = await fetch('/start', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ streamKey, videoUrl, orientation })
+      });
+      const text = await res.text();
+      log.textContent += text + '\n';
+    });
+
+    stopBtn.addEventListener('click', async () => {
+      const res = await fetch('/stop', { method: 'POST' });
+      const text = await res.text();
+      log.textContent += text + '\n';
+    });
+
+    setInterval(async () => {
+      const res = await fetch('/logs');
+      const text = await res.text();
+      log.textContent = text;
+    }, 2000);
+  </script>
+</body>
+</html>
