@@ -1,0 +1,227 @@
+[2025-10-27T10:38:55.879Z] Starting ffmpeg: ffmpeg -re -stream_loop -1 -i http://m.live.net.sa:1935/live/quran/playlist.m3u8 -c:v libx264 -preset veryfast -b:v 6000k -maxrate 6000k -bufsize 12000k -pix_fmt yuv420p -r 60 -g 120 -vf transpose=1,scale=1920:1080 -c:a aac -b:a 160k -ar 44100 -f flv rtmp://a.rtmp.youtube.com/live2/xt1p-9fpj-4ggd-0fdw-4spf
+[2025-10-27T10:38:56.557Z] stderr: ffmpeg version 7.1.2 Copyright (c) 2000-2025 the FFmpeg developers
+  built with Android (13624864, +pgo, +bolt, +lto, +mlgo, based on r530567e) clang version 19.0.1 (https://android.googlesource.com/toolchain/llvm-project 97a699bf4812a18fb657c2779f5296a4ab2694d2)
+  configuration: --arch=aarch64 --as=aarch64-linux-android-clang --cc=aarch64-linux-android-clang --cxx=aarch64-linux-android-clang++ --nm=llvm-nm --ar=llvm-ar --ranlib=llvm-ranlib --pkg-config=/home/builder/.termux-build/_cache/android-r28c-api-24-v1/bin/pkg-config --strip=llvm-strip --cross-prefix=aarch64-linux-android- --disable-indevs --disable-outdevs --enable-indev=lavfi --disable-static --disable-symver --enable-cross-compile --enable-gnutls --enable-gpl --enable-version3 --enable-jni --enable-lcms2 --enable-libaom --enable-libass --enable-libbluray --enable-libdav1d --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libharfbuzz --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenmpt --enable-libopus --enable-libplacebo --enable-librav1e --enable-librubberband --enable-libsoxr --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtheora --enable-libv4l2 --enable-libvidstab --enable-libvmaf --enable-libvo-amrwbenc --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-libzmq --enable-mediacodec --enable-opencl --enable-shared --prefix=/data/data/com.termux/files/usr --target-os=android --extra-libs=-landroid-glob --enable-vulkan --enable-neon --disable-libfdk-aac
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[2025-10-27T10:38:58.685Z] stderr: [hls @ 0xb400007878b80280] Skip ('#EXT-X-VERSION:3')
+[hls @ 0xb400007878b80280] Opening 'http://m.live.net.sa:1935/live/quran/chunklist_w1340292480.m3u8' for reading
+[2025-10-27T10:39:00.349Z] stderr: [hls @ 0xb400007878b80280] Skip ('#EXT-X-VERSION:3')
+[hls @ 0xb400007878b80280] Skip ('#EXT-X-DISCONTINUITY-SEQUENCE:0')
+[hls @ 0xb400007878b80280] Opening 'http://m.live.net.sa:1935/live/quran/media_w1340292480_44570.ts' for reading
+[2025-10-27T10:39:01.587Z] stderr: [hls @ 0xb400007878b80280] Opening 'http://m.live.net.sa:1935/live/quran/media_w1340292480_44571.ts' for reading
+[2025-10-27T10:39:03.144Z] stderr: Input #0, hls, from 'http://m.live.net.sa:1935/live/quran/playlist.m3u8':
+  Duration: N/A, start: 66667.036644, bitrate: N/A
+  Program 0 
+    Metadata:
+      variant_bitrate : 2089613
+  Stream #0:0: Data: timed_id3 (ID3  / 0x20334449)
+      Metadata:
+        variant_bitrate : 2089613
+  Stream #0:1: Video: h264 (Main) ([27][0][0][0] / 0x001B), yuv420p, 1280x720 [SAR 1:1 DAR 16:9], 26 fps, 26 tbr, 90k tbn
+      Metadata:
+        variant_bitrate : 2089613
+  Stream #0:2: Audio: aac (LC) ([15][0][0][0] / 0x000F), 48000 Hz, stereo, fltp
+      Metadata:
+        variant_bitrate : 2089613
+[2025-10-27T10:39:10.832Z] stderr: [out#0/flv @ 0xb400007878bf3780] Error opening output rtmp://a.rtmp.youtube.com/live2/xt1p-9fpj-4ggd-0fdw-4spf: I/O error
+Error opening output file rtmp://a.rtmp.youtube.com/live2/xt1p-9fpj-4ggd-0fdw-4spf.
+Error opening output files: I/O error
+[2025-10-27T10:39:10.982Z] FFmpeg closed (code=251 signal=null).
+[2025-10-27T10:39:10.982Z] Auto-restart in 2s (attempt 1)
+[2025-10-27T10:39:12.987Z] Starting ffmpeg: ffmpeg -re -stream_loop -1 -i http://m.live.net.sa:1935/live/quran/playlist.m3u8 -c:v libx264 -preset veryfast -b:v 6000k -maxrate 6000k -bufsize 12000k -pix_fmt yuv420p -r 60 -g 120 -vf transpose=1,scale=1920:1080 -c:a aac -b:a 160k -ar 44100 -f flv rtmp://a.rtmp.youtube.com/live2/xt1p-9fpj-4ggd-0fdw-4spf
+[2025-10-27T10:39:13.281Z] stderr: ffmpeg version 7.1.2 Copyright (c) 2000-2025 the FFmpeg developers
+  built with Android (13624864, +pgo, +bolt, +lto, +mlgo, based on r530567e) clang version 19.0.1 (https://android.googlesource.com/toolchain/llvm-project 97a699bf4812a18fb657c2779f5296a4ab2694d2)
+  configuration: --arch=aarch64 --as=aarch64-linux-android-clang --cc=aarch64-linux-android-clang --cxx=aarch64-linux-android-clang++ --nm=llvm-nm --ar=llvm-ar --ranlib=llvm-ranlib --pkg-config=/home/builder/.termux-build/_cache/android-r28c-api-24-v1/bin/pkg-config --strip=llvm-strip --cross-prefix=aarch64-linux-android- --disable-indevs --disable-outdevs --enable-indev=lavfi --disable-static --disable-symver --enable-cross-compile --enable-gnutls --enable-gpl --enable-version3 --enable-jni --enable-lcms2 --enable-libaom --enable-libass --enable-libbluray --enable-libdav1d --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libharfbuzz --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenmpt --enable-libopus --enable-libplacebo --enable-librav1e --enable-librubberband --enable-libsoxr --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtheora --enable-libv4l2 --enable-libvidstab --enable-libvmaf --enable-libvo-amrwbenc --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-libzmq --enable-mediacodec --enable-opencl --enable-shared --prefix=/data/data/com.termux/files/usr --target-os=android --extra-libs=-landroid-glob --enable-vulkan --enable-neon --disable-libfdk-aac
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[2025-10-27T10:39:15.355Z] stderr: [hls @ 0xb400007eef580280] Skip ('#EXT-X-VERSION:3')
+[hls @ 0xb400007eef580280] Opening 'http://m.live.net.sa:1935/live/quran/chunklist_w360968314.m3u8' for reading
+[2025-10-27T10:39:17.391Z] stderr: [hls @ 0xb400007eef580280] Skip ('#EXT-X-VERSION:3')
+[hls @ 0xb400007eef580280] Skip ('#EXT-X-DISCONTINUITY-SEQUENCE:0')
+[hls @ 0xb400007eef580280] Opening 'http://m.live.net.sa:1935/live/quran/media_w360968314_44572.ts' for reading
+[2025-10-27T10:39:19.202Z] stderr: [hls @ 0xb400007eef580280] Opening 'http://m.live.net.sa:1935/live/quran/media_w360968314_44573.ts' for reading
+[2025-10-27T10:39:21.141Z] stderr: Input #0, hls, from 'http://m.live.net.sa:1935/live/quran/playlist.m3u8':
+  Duration: N/A, start: 66686.620311, bitrate: N/A
+  Program 0 
+    Metadata:
+      variant_bitrate : 2089613
+  Stream #0:0: Data: timed_id3 (ID3  / 0x20334449)
+      Metadata:
+        variant_bitrate : 2089613
+  Stream #0:1: Video: h264 (Main) ([27][0][0][0] / 0x001B), yuv420p, 1280x720 [SAR 1:1 DAR 16:9], 26 fps, 26 tbr, 90k tbn
+      Metadata:
+        variant_bitrate : 2089613
+  Stream #0:2: Audio: aac (LC) ([15][0][0][0] / 0x000F), 48000 Hz, stereo, fltp
+      Metadata:
+        variant_bitrate : 2089613
+[2025-10-27T10:39:30.322Z] stderr: [out#0/flv @ 0xb400007eef5f3780] Error opening output rtmp://a.rtmp.youtube.com/live2/xt1p-9fpj-4ggd-0fdw-4spf: I/O error
+Error opening output file rtmp://a.rtmp.youtube.com/live2/xt1p-9fpj-4ggd-0fdw-4spf.
+Error opening output files: I/O error
+[2025-10-27T10:39:30.457Z] FFmpeg closed (code=251 signal=null).
+[2025-10-27T10:39:30.458Z] Auto-restart in 4s (attempt 2)
+[2025-10-27T10:39:34.460Z] Starting ffmpeg: ffmpeg -re -stream_loop -1 -i http://m.live.net.sa:1935/live/quran/playlist.m3u8 -c:v libx264 -preset veryfast -b:v 6000k -maxrate 6000k -bufsize 12000k -pix_fmt yuv420p -r 60 -g 120 -vf transpose=1,scale=1920:1080 -c:a aac -b:a 160k -ar 44100 -f flv rtmp://a.rtmp.youtube.com/live2/xt1p-9fpj-4ggd-0fdw-4spf
+[2025-10-27T10:39:34.690Z] stderr: ffmpeg version 7.1.2 Copyright (c) 2000-2025 the FFmpeg developers
+  built with Android (13624864, +pgo, +bolt, +lto, +mlgo, based on r530567e) clang version 19.0.1 (https://android.googlesource.com/toolchain/llvm-project 97a699bf4812a18fb657c2779f5296a4ab2694d2)
+  configuration: --arch=aarch64 --as=aarch64-linux-android-clang --cc=aarch64-linux-android-clang --cxx=aarch64-linux-android-clang++ --nm=llvm-nm --ar=llvm-ar --ranlib=llvm-ranlib --pkg-config=/home/builder/.termux-build/_cache/android-r28c-api-24-v1/bin/pkg-config --strip=llvm-strip --cross-prefix=aarch64-linux-android- --disable-indevs --disable-outdevs --enable-indev=lavfi --disable-static --disable-symver --enable-cross-compile --enable-gnutls --enable-gpl --enable-version3 --enable-jni --enable-lcms2 --enable-libaom --enable-libass --enable-libbluray --enable-libdav1d --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libharfbuzz --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenmpt --enable-libopus --enable-libplacebo --enable-librav1e --enable-librubberband --enable-libsoxr --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtheora --enable-libv4l2 --enable-libvidstab --enable-libvmaf --enable-libvo-amrwbenc --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-libzmq --enable-mediacodec --enable-opencl --enable-shared --prefix=/data/data/com.termux/files/usr --target-os=android --extra-libs=-landroid-glob --enable-vulkan --enable-neon --disable-libfdk-aac
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[2025-10-27T10:39:35.938Z] stderr: [hls @ 0xb4000079fb980280] Skip ('#EXT-X-VERSION:3')
+[hls @ 0xb4000079fb980280] Opening 'http://m.live.net.sa:1935/live/quran/chunklist_w144210086.m3u8' for reading
+[2025-10-27T10:39:37.137Z] stderr: [hls @ 0xb4000079fb980280] Skip ('#EXT-X-VERSION:3')
+[hls @ 0xb4000079fb980280] Skip ('#EXT-X-DISCONTINUITY-SEQUENCE:0')
+[hls @ 0xb4000079fb980280] Opening 'http://m.live.net.sa:1935/live/quran/media_w144210086_44574.ts' for reading
+[2025-10-27T10:39:38.037Z] stderr: [hls @ 0xb4000079fb980280] Opening 'http://m.live.net.sa:1935/live/quran/media_w144210086_44575.ts' for reading
+[2025-10-27T10:39:39.249Z] stderr: Input #0, hls, from 'http://m.live.net.sa:1935/live/quran/playlist.m3u8':
+  Duration: N/A, start: 66706.444311, bitrate: N/A
+  Program 0 
+    Metadata:
+      variant_bitrate : 2089613
+[2025-10-27T10:39:39.251Z] stderr: Stream #0:0: Data: timed_id3 (ID3  / 0x20334449)
+      Metadata:
+        variant_bitrate : 2089613
+  Stream #0:1: Video: h264 (Main) ([27][0][0][0] / 0x001B), yuv420p, 1280x720 [SAR 1:1 DAR 16:9], 26 fps, 26 tbr, 90k tbn
+      Metadata:
+        variant_bitrate : 2089613
+  Stream #0:2: Audio: aac (LC) ([15][0][0][0] / 0x000F), 48000 Hz, stereo, fltp
+      Metadata:
+        variant_bitrate : 2089613
+[2025-10-27T10:39:50.867Z] stderr: [out#0/flv @ 0xb4000079fb9f3780] Error opening output rtmp://a.rtmp.youtube.com/live2/xt1p-9fpj-4ggd-0fdw-4spf: I/O error
+Error opening output file rtmp://a.rtmp.youtube.com/live2/xt1p-9fpj-4ggd-0fdw-4spf.
+Error opening output files: I/O error
+[2025-10-27T10:39:50.941Z] FFmpeg closed (code=251 signal=null).
+[2025-10-27T10:39:50.942Z] Auto-restart in 8s (attempt 3)
+[2025-10-27T10:39:58.943Z] Starting ffmpeg: ffmpeg -re -stream_loop -1 -i http://m.live.net.sa:1935/live/quran/playlist.m3u8 -c:v libx264 -preset veryfast -b:v 6000k -maxrate 6000k -bufsize 12000k -pix_fmt yuv420p -r 60 -g 120 -vf transpose=1,scale=1920:1080 -c:a aac -b:a 160k -ar 44100 -f flv rtmp://a.rtmp.youtube.com/live2/xt1p-9fpj-4ggd-0fdw-4spf
+[2025-10-27T10:39:59.230Z] stderr: ffmpeg version 7.1.2 Copyright (c) 2000-2025 the FFmpeg developers
+  built with Android (13624864, +pgo, +bolt, +lto, +mlgo, based on r530567e) clang version 19.0.1 (https://android.googlesource.com/toolchain/llvm-project 97a699bf4812a18fb657c2779f5296a4ab2694d2)
+  configuration: --arch=aarch64 --as=aarch64-linux-android-clang --cc=aarch64-linux-android-clang --cxx=aarch64-linux-android-clang++ --nm=llvm-nm --ar=llvm-ar --ranlib=llvm-ranlib --pkg-config=/home/builder/.termux-build/_cache/android-r28c-api-24-v1/bin/pkg-config --strip=llvm-strip --cross-prefix=aarch64-linux-android- --disable-indevs --disable-outdevs --enable-indev=lavfi --disable-static --disable-symver --enable-cross-compile --enable-gnutls --enable-gpl --enable-version3 --enable-jni --enable-lcms2 --enable-libaom --enable-libass --enable-libbluray --enable-libdav1d --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libharfbuzz --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenmpt --enable-libopus --enable-libplacebo --enable-librav1e --enable-librubberband --enable-libsoxr --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtheora --enable-libv4l2 --enable-libvidstab --enable-libvmaf --enable-libvo-amrwbenc --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-libzmq --enable-mediacodec --enable-opencl --enable-shared --prefix=/data/data/com.termux/files/usr --target-os=android --extra-libs=-landroid-glob --enable-vulkan --enable-neon --disable-libfdk-aac
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[2025-10-27T10:40:01.120Z] stderr: [hls @ 0xb400007605f80280] Skip ('#EXT-X-VERSION:3')
+[hls @ 0xb400007605f80280] Opening 'http://m.live.net.sa:1935/live/quran/chunklist_w963895344.m3u8' for reading
+[2025-10-27T10:40:02.716Z] stderr: [hls @ 0xb400007605f80280] Skip ('#EXT-X-VERSION:3')
+[hls @ 0xb400007605f80280] Skip ('#EXT-X-DISCONTINUITY-SEQUENCE:0')
+[hls @ 0xb400007605f80280] Opening 'http://m.live.net.sa:1935/live/quran/media_w963895344_44576.ts' for reading
+[2025-10-27T10:40:04.121Z] stderr: [hls @ 0xb400007605f80280]
+[2025-10-27T10:40:04.122Z] stderr: Opening 'http://m.live.net.sa:1935/live/quran/media_w963895344_44577.ts' for reading
+[2025-10-27T10:40:06.053Z] stderr: Input #0, hls, from 'http://m.live.net.sa:1935/live/quran/playlist.m3u8':
+  Duration: N/A, start: 66728.044311, bitrate: N/A
+  Program 0 
+    Metadata:
+      variant_bitrate : 2083075
+  Stream #0:0: Data: timed_id3 (ID3  / 0x20334449)
+      Metadata:
+        variant_bitrate : 2083075
+  Stream #0:1: Video: h264 (Main) ([27][0][0][0] / 0x001B), yuv420p, 1280x720 [SAR 1:1 DAR 16:9], 26 fps, 26 tbr, 90k tbn
+      Metadata:
+        variant_bitrate : 2083075
+  Stream #0:2: Audio: aac (LC) ([15][0][0][0] / 0x000F), 48000 Hz, stereo, fltp
+      Metadata:
+        variant_bitrate : 2083075
+[2025-10-27T10:40:24.919Z] stderr: [out#0/flv @ 0xb400007605ff3780] Error opening output rtmp://a.rtmp.youtube.com/live2/xt1p-9fpj-4ggd-0fdw-4spf: I/O error
+Error opening output file rtmp://a.rtmp.youtube.com/live2/xt1p-9fpj-4ggd-0fdw-4spf.
+Error opening output files: I/O error
+[2025-10-27T10:40:25.021Z] FFmpeg closed (code=251 signal=null).
+[2025-10-27T10:40:25.022Z] Auto-restart in 16s (attempt 4)
+[2025-10-27T10:40:41.023Z] Starting ffmpeg: ffmpeg -re -stream_loop -1 -i http://m.live.net.sa:1935/live/quran/playlist.m3u8 -c:v libx264 -preset veryfast -b:v 6000k -maxrate 6000k -bufsize 12000k -pix_fmt yuv420p -r 60 -g 120 -vf transpose=1,scale=1920:1080 -c:a aac -b:a 160k -ar 44100 -f flv rtmp://a.rtmp.youtube.com/live2/xt1p-9fpj-4ggd-0fdw-4spf
+[2025-10-27T10:40:41.241Z] stderr: ffmpeg version 7.1.2 Copyright (c) 2000-2025 the FFmpeg developers
+  built with Android (13624864, +pgo, +bolt, +lto, +mlgo, based on r530567e) clang version 19.0.1 (https://android.googlesource.com/toolchain/llvm-project 97a699bf4812a18fb657c2779f5296a4ab2694d2)
+  configuration: --arch=aarch64 --as=aarch64-linux-android-clang --cc=aarch64-linux-android-clang --cxx=aarch64-linux-android-clang++ --nm=llvm-nm --ar=llvm-ar --ranlib=llvm-ranlib --pkg-config=/home/builder/.termux-build/_cache/android-r28c-api-24-v1/bin/pkg-config --strip=llvm-strip --cross-prefix=aarch64-linux-android- --disable-indevs --disable-outdevs --enable-indev=lavfi --disable-static --disable-symver --enable-cross-compile --enable-gnutls --enable-gpl --enable-version3 --enable-jni --enable-lcms2 --enable-libaom --enable-libass --enable-libbluray --enable-libdav1d --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libharfbuzz --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenmpt --enable-libopus --enable-libplacebo --enable-librav1e --enable-librubberband --enable-libsoxr --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtheora --enable-libv4l2 --enable-libvidstab --enable-libvmaf --enable-libvo-amrwbenc --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-libzmq --enable-mediacodec --enable-opencl --enable-shared --prefix=/data/data/com.termux/files/usr --target-os=android --extra-libs=-landroid-glob --enable-vulkan --enable-neon --disable-libfdk-aac
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[2025-10-27T10:40:42.803Z] stderr: [hls @ 0xb400007f27f80280] Skip ('#EXT-X-VERSION:3')
+[hls @ 0xb400007f27f80280] Opening 'http://m.live.net.sa:1935/live/quran/chunklist_w1037479983.m3u8' for reading
+[2025-10-27T10:40:44.275Z] stderr: [hls @ 0xb400007f27f80280]
+[2025-10-27T10:40:44.275Z] stderr: Skip ('#EXT-X-VERSION:3')
+[2025-10-27T10:40:44.276Z] stderr: [hls @ 0xb400007f27f80280]
+[2025-10-27T10:40:44.277Z] stderr: Skip ('#EXT-X-DISCONTINUITY-SEQUENCE:0')
+[2025-10-27T10:40:44.277Z] stderr: [hls @ 0xb400007f27f80280]
+[2025-10-27T10:40:44.278Z] stderr: Opening 'http://m.live.net.sa:1935/live/quran/media_w1037479983_44580.ts' for reading
+[2025-10-27T10:40:45.213Z] stderr: [hls @ 0xb400007f27f80280] Opening 'http://m.live.net.sa:1935/live/quran/media_w1037479983_44581.ts' for reading
+[2025-10-27T10:40:47.335Z] stderr: Input #0, hls, from 'http://m.live.net.sa:1935/live/quran/playlist.m3u8':
+  Duration: N/A, start: 66767.918311, bitrate: N/A
+  Program 0 
+    Metadata:
+      variant_bitrate : 2083075
+  Stream #0:0: Data: timed_id3 (ID3  / 0x20334449)
+[2025-10-27T10:40:47.335Z] stderr: Metadata:
+        variant_bitrate : 2083075
+  Stream #0:1: Video: h264 (Main) ([27][0][0][0] / 0x001B), yuv420p, 1280x720 [SAR 1:1 DAR 16:9], 26 fps, 26 tbr, 90k tbn
+      Metadata:
+        variant_bitrate : 2083075
+  Stream #0:2: Audio: aac (LC) ([15][0][0][0] / 0x000F), 48000 Hz, stereo, fltp
+      Metadata:
+        variant_bitrate : 2083075
+[2025-10-27T10:40:50.982Z] stderr: [out#0/flv @ 0xb400007f27ff3780] Error opening output rtmp://a.rtmp.youtube.com/live2/xt1p-9fpj-4ggd-0fdw-4spf: I/O error
+Error opening output file rtmp://a.rtmp.youtube.com/live2/xt1p-9fpj-4ggd-0fdw-4spf.
+Error opening output files: I/O error
+[2025-10-27T10:40:51.049Z] FFmpeg closed (code=251 signal=null).
+[2025-10-27T10:40:51.049Z] Auto-restart in 30s (attempt 5)
+[2025-10-27T10:41:21.050Z] Starting ffmpeg: ffmpeg -re -stream_loop -1 -i http://m.live.net.sa:1935/live/quran/playlist.m3u8 -c:v libx264 -preset veryfast -b:v 6000k -maxrate 6000k -bufsize 12000k -pix_fmt yuv420p -r 60 -g 120 -vf transpose=1,scale=1920:1080 -c:a aac -b:a 160k -ar 44100 -f flv rtmp://a.rtmp.youtube.com/live2/xt1p-9fpj-4ggd-0fdw-4spf
+[2025-10-27T10:41:21.263Z] stderr: ffmpeg version 7.1.2 Copyright (c) 2000-2025 the FFmpeg developers
+  built with Android (13624864, +pgo, +bolt, +lto, +mlgo, based on r530567e) clang version 19.0.1 (https://android.googlesource.com/toolchain/llvm-project 97a699bf4812a18fb657c2779f5296a4ab2694d2)
+  configuration: --arch=aarch64 --as=aarch64-linux-android-clang --cc=aarch64-linux-android-clang --cxx=aarch64-linux-android-clang++ --nm=llvm-nm --ar=llvm-ar --ranlib=llvm-ranlib --pkg-config=/home/builder/.termux-build/_cache/android-r28c-api-24-v1/bin/pkg-config --strip=llvm-strip --cross-prefix=aarch64-linux-android- --disable-indevs --disable-outdevs --enable-indev=lavfi --disable-static --disable-symver --enable-cross-compile --enable-gnutls --enable-gpl --enable-version3 --enable-jni --enable-lcms2 --enable-libaom --enable-libass --enable-libbluray --enable-libdav1d --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libharfbuzz --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenmpt --enable-libopus --enable-libplacebo --enable-librav1e --enable-librubberband --enable-libsoxr --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtheora --enable-libv4l2 --enable-libvidstab --enable-libvmaf --enable-libvo-amrwbenc --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-libzmq --enable-mediacodec --enable-opencl --enable-shared --prefix=/data/data/com.termux/files/usr --target-os=android --extra-libs=-landroid-glob --enable-vulkan --enable-neon --disable-libfdk-aac
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[2025-10-27T10:41:22.200Z] stderr: [hls @ 0xb40000782af80280] Skip ('#EXT-X-VERSION:3')
+[hls @ 0xb40000782af80280] Opening 'http://m.live.net.sa:1935/live/quran/chunklist_w1796431303.m3u8' for reading
+[2025-10-27T10:41:23.615Z] stderr: [hls @ 0xb40000782af80280] Skip ('#EXT-X-VERSION:3')
+[hls @ 0xb40000782af80280] Skip ('#EXT-X-DISCONTINUITY-SEQUENCE:0')
+[2025-10-27T10:41:23.617Z] stderr: [hls @ 0xb40000782af80280] Opening 'http://m.live.net.sa:1935/live/quran/media_w1796431303_44584.ts' for reading
+[2025-10-27T10:41:24.342Z] stderr: [hls @ 0xb40000782af80280] Opening 'http://m.live.net.sa:1935/live/quran/media_w1796431303_44585.ts' for reading
+[2025-10-27T10:41:25.346Z] stderr: Input #0, hls, from 'http://m.live.net.sa:1935/live/quran/playlist.m3u8':
+  Duration: N/A, start: 66807.265311, bitrate: N/A
+  Program 0 
+    Metadata:
+      variant_bitrate : 2114111
+  Stream #0:0: Data: timed_id3 (ID3  / 0x20334449)
+      Metadata:
+        variant_bitrate : 2114111
+  Stream #0:1: Video: h264 (Main) ([27][0][0][0] / 0x001B), yuv420p, 1280x720 [SAR 1:1 DAR 16:9], 26 fps, 26 tbr, 90k tbn
+      Metadata:
+        variant_bitrate : 2114111
+  Stream #0:2: Audio: aac (LC) ([15][0][0][0] / 0x000F), 48000 Hz, stereo, fltp
+      Metadata:
+        variant_bitrate : 2114111
+[2025-10-27T10:41:28.881Z] stderr: [out#0/flv @ 0xb40000782aff3780] Error opening output rtmp://a.rtmp.youtube.com/live2/xt1p-9fpj-4ggd-0fdw-4spf: I/O error
+Error opening output file rtmp://a.rtmp.youtube.com/live2/xt1p-9fpj-4ggd-0fdw-4spf.
+Error opening output files: I/O error
+[2025-10-27T10:41:28.982Z] FFmpeg closed (code=251 signal=null).
+[2025-10-27T10:41:28.983Z] No more auto-restarts (restarts=5).
+[2025-10-27T10:41:44.779Z] Stop requested (no process).

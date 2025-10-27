@@ -1,64 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>YouTube Stream Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <h1>YouTube Stream Dashboard</h1>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col items-center py-8">
 
-  <form id="streamForm">
-    <label>YouTube Stream Key:</label><br>
-    <input type="text" id="streamKey" placeholder="Enter your YouTube stream key" size="60"><br><br>
+  <h1 class="text-3xl font-bold mb-6 text-red-400">🎥 YouTube Stream Dashboard</h1>
 
-    <label>Video URL:</label><br>
-    <input type="text" id="videoUrl" placeholder="Enter video URL" size="60"><br><br>
+  <div class="bg-gray-800 p-6 rounded-2xl shadow-2xl w-full max-w-lg space-y-4">
+    <form id="streamForm" class="space-y-3">
+      <div>
+        <label class="block mb-1">Stream Key</label>
+        <input id="streamKey" class="w-full p-2 bg-gray-700 rounded" placeholder="YouTube Stream Key">
+      </div>
+      <div>
+        <label class="block mb-1">Video URL (.m3u8 or .mp4)</label>
+        <input id="videoUrl" class="w-full p-2 bg-gray-700 rounded" placeholder="Video URL">
+      </div>
+      <div>
+        <label class="block mb-1">Orientation</label>
+        <select id="orientation" class="w-full p-2 bg-gray-700 rounded">
+          <option value="none">Horizontal (16:9)</option>
+          <option value="transpose1">Vertical (Clockwise)</option>
+          <option value="transpose2">Vertical (Counterclockwise)</option>
+        </select>
+      </div>
+      <div class="flex justify-between">
+        <button type="submit" class="bg-green-600 px-4 py-2 rounded">Start</button>
+        <button id="stopBtn" type="button" class="bg-red-600 px-4 py-2 rounded">Stop</button>
+        <button id="clearBtn" type="button" class="bg-yellow-500 px-4 py-2 rounded">Clear Logs</button>
+      </div>
+    </form>
+  </div>
 
-    <label>Orientation:</label><br>
-    <select id="orientation">
-      <option value="none">Horizontal</option>
-      <option value="transpose1">Vertical Clockwise</option>
-      <option value="transpose2">Vertical Counterclockwise</option>
-    </select><br><br>
-
-    <button type="submit">Start Streaming</button>
-    <button type="button" id="stopBtn">Stop Streaming</button>
-  </form>
-
-  <h2>Logs:</h2>
-  <pre id="log" style="background:#f0f0f0;padding:10px;height:300px;overflow:auto;"></pre>
+  <div class="mt-6 w-full max-w-3xl bg-gray-800 p-4 rounded-xl shadow">
+    <h2 class="text-lg font-semibold mb-2">Logs</h2>
+    <pre id="log" class="bg-gray-900 text-green-400 p-3 h-80 overflow-y-scroll rounded"></pre>
+  </div>
 
   <script>
-    const form = document.getElementById('streamForm');
-    const stopBtn = document.getElementById('stopBtn');
-    const log = document.getElementById('log');
+    const logBox = document.getElementById("log");
 
-    form.addEventListener('submit', async (e) => {
+    const addLog = (m) => {
+      logBox.textContent += m + "\n";
+      logBox.scrollTop = logBox.scrollHeight;
+    };
+
+    document.getElementById("streamForm").addEventListener("submit", async (e) => {
       e.preventDefault();
-      const streamKey = document.getElementById('streamKey').value;
-      const videoUrl = document.getElementById('videoUrl').value;
-      const orientation = document.getElementById('orientation').value;
-
-      const res = await fetch('/start', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const streamKey = document.getElementById("streamKey").value.trim();
+      const videoUrl = document.getElementById("videoUrl").value.trim();
+      const orientation = document.getElementById("orientation").value;
+      const res = await fetch("/start", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ streamKey, videoUrl, orientation })
       });
-      const text = await res.text();
-      log.textContent += text + '\n';
+      addLog(await res.text());
     });
 
-    stopBtn.addEventListener('click', async () => {
-      const res = await fetch('/stop', { method: 'POST' });
-      const text = await res.text();
-      log.textContent += text + '\n';
+    document.getElementById("stopBtn").addEventListener("click", async () => {
+      const res = await fetch("/stop", { method: "POST" });
+      addLog(await res.text());
     });
+
+    document.getElementById("clearBtn").addEventListener("click", () => logBox.textContent = "");
 
     setInterval(async () => {
-      const res = await fetch('/logs');
-      const text = await res.text();
-      log.textContent = text;
+      try {
+        const res = await fetch("/logs");
+        logBox.textContent = await res.text();
+        logBox.scrollTop = logBox.scrollHeight;
+      } catch { addLog("⚠️ Connection error"); }
     }, 2000);
   </script>
 </body>

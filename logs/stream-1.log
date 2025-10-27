@@ -1,0 +1,294 @@
+[2025-10-27T10:32:48.001Z] stderr: [flv @ 0xb400007d47b82f80] Failed to update header with correct duration.
+[flv @ 0xb400007d47b82f80] Failed to update header with correct filesize.
+[2025-10-27T10:32:48.003Z] stderr: [out#0/flv @ 0xb400007d47bf3780] video:16907KiB audio:438KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.244728%
+frame= 1347 fps= 15 q=-1.0 Lsize=   17388KiB time=00:00:22.41 bitrate=6354.3kbits/s dup=796 drop=0 speed=0.246x
+[2025-10-27T10:32:48.021Z] stderr: [libx264 @ 0xb400007d47a30600] frame I:12    Avg QP:25.28  size:176616
+[libx264 @ 0xb400007d47a30600] frame P:485   Avg QP:30.41  size: 29200
+[libx264 @ 0xb400007d47a30600] frame B:850   Avg QP:33.11  size:  1213
+[libx264 @ 0xb400007d47a30600] consecutive B-frames:  1.0% 34.3% 31.2% 33.6%
+[libx264 @ 0xb400007d47a30600] mb I  I16..4: 10.9% 24.1% 65.0%
+[libx264 @ 0xb400007d47a30600] mb P  I16..4:  0.5%  1.0%  0.5%  P16..4: 23.2% 18.0% 12.2%  0.0%  0.0%    skip:44.7%
+[2025-10-27T10:32:48.023Z] stderr: [libx264 @ 0xb400007d47a30600] mb B  I16..4:  0.0%  0.0%  0.0%  B16..8:  8.2%  0.7%  0.1%  direct: 0.7%  skip:90.2%  L0:24.0% L1:69.5% BI: 6.5%
+[libx264 @ 0xb400007d47a30600] 8x8 transform intra:35.2% inter:23.0%
+[libx264 @ 0xb400007d47a30600] coded y,uvDC,uvAC intra: 71.6% 24.3% 2.8% inter: 7.4% 0.5% 0.0%
+[libx264 @ 0xb400007d47a30600] i16 v,h,dc,p: 46% 35% 14%  5%
+[libx264 @ 0xb400007d47a30600] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 28% 31% 18%  2%  4%  3%  3%  5%  6%
+[libx264 @ 0xb400007d47a30600] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 27% 19% 13%  3%  9%  7%  6%  7%  8%
+[libx264 @ 0xb400007d47a30600] i8c dc,h,v,p: 65% 22% 12%  1%
+[libx264 @ 0xb400007d47a30600] Weighted P-Frames: Y:1.2% UV:0.2%
+[libx264 @ 0xb400007d47a30600] kb/s:6169.18
+[2025-10-27T10:32:48.142Z] stderr: [aac @ 0xb400007c93f9d000] Qavg: 7186.190
+[2025-10-27T10:32:48.173Z] stderr: Exiting normally, received signal 2.
+[2025-10-27T10:32:48.346Z] FFmpeg closed (code=255 signal=null).
+[2025-10-27T10:32:48.346Z] Auto-restart in 2s (attempt 1)
+[2025-10-27T10:32:50.349Z] Starting ffmpeg: ffmpeg -re -stream_loop -1 -i http://m.live.net.sa:1935/live/quran/playlist.m3u8 -c:v libx264 -preset veryfast -b:v 6000k -maxrate 6000k -bufsize 12000k -pix_fmt yuv420p -r 60 -g 120 -vf scale=1920:1080 -c:a aac -b:a 160k -ar 44100 -f flv rtmp://a.rtmp.youtube.com/live2/xkxe-1tdg-d3tk-6ydy-ft0k
+[2025-10-27T10:32:50.577Z] stderr: ffmpeg version 7.1.2 Copyright (c) 2000-2025 the FFmpeg developers
+  built with Android (13624864, +pgo, +bolt, +lto, +mlgo, based on r530567e) clang version 19.0.1 (https://android.googlesource.com/toolchain/llvm-project 97a699bf4812a18fb657c2779f5296a4ab2694d2)
+  configuration: --arch=aarch64 --as=aarch64-linux-android-clang --cc=aarch64-linux-android-clang --cxx=aarch64-linux-android-clang++ --nm=llvm-nm --ar=llvm-ar --ranlib=llvm-ranlib --pkg-config=/home/builder/.termux-build/_cache/android-r28c-api-24-v1/bin/pkg-config --strip=llvm-strip --cross-prefix=aarch64-linux-android- --disable-indevs --disable-outdevs --enable-indev=lavfi --disable-static --disable-symver --enable-cross-compile --enable-gnutls --enable-gpl --enable-version3 --enable-jni --enable-lcms2 --enable-libaom --enable-libass --enable-libbluray --enable-libdav1d --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libharfbuzz --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenmpt --enable-libopus --enable-libplacebo --enable-librav1e --enable-librubberband --enable-libsoxr --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtheora --enable-libv4l2 --enable-libvidstab --enable-libvmaf --enable-libvo-amrwbenc --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-libzmq --enable-mediacodec --enable-opencl --enable-shared --prefix=/data/data/com.termux/files/usr --target-os=android --extra-libs=-landroid-glob --enable-vulkan --enable-neon --disable-libfdk-aac
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[2025-10-27T10:32:51.310Z] stderr: [hls @ 0xb4000072e6d80280] Skip ('#EXT-X-VERSION:3')
+[2025-10-27T10:32:51.312Z] stderr: [hls @ 0xb4000072e6d80280] Opening 'http://m.live.net.sa:1935/live/quran/chunklist_w1267709693.m3u8' for reading
+[2025-10-27T10:32:51.971Z] stderr: [hls @ 0xb4000072e6d80280] Skip ('#EXT-X-VERSION:3')
+[hls @ 0xb4000072e6d80280] Skip ('#EXT-X-DISCONTINUITY-SEQUENCE:0')
+[2025-10-27T10:32:51.973Z] stderr: [hls @ 0xb4000072e6d80280] Opening 'http://m.live.net.sa:1935/live/quran/media_w1267709693_44533.ts' for reading
+[2025-10-27T10:32:52.343Z] stderr: [hls @ 0xb4000072e6d80280] Opening 'http://m.live.net.sa:1935/live/quran/media_w1267709693_44534.ts' for reading
+[2025-10-27T10:32:53.283Z] stderr: Input #0, hls, from 'http://m.live.net.sa:1935/live/quran/playlist.m3u8':
+  Duration: N/A, start: 66297.884978, bitrate: N/A
+  Program 0 
+    Metadata:
+      variant_bitrate : 2093382
+  Stream #0:0: Data: timed_id3 (ID3  / 0x20334449)
+      Metadata:
+        variant_bitrate : 2093382
+[2025-10-27T10:32:53.284Z] stderr: Stream #0:1: Video: h264 (Main) ([27][0][0][0] / 0x001B), yuv420p, 1280x720 [SAR 1:1 DAR 16:9], 26 fps, 26 tbr, 90k tbn
+      Metadata:
+        variant_bitrate : 2093382
+  Stream #0:2: Audio: aac (LC) ([15][0][0][0] / 0x000F), 48000 Hz, stereo, fltp
+      Metadata:
+        variant_bitrate : 2093382
+[2025-10-27T10:32:55.380Z] stderr: Stream mapping:
+  Stream #0:1 -> #0:0 (h264 (native) -> h264 (libx264))
+  Stream #0:2 -> #0:1 (aac (native) -> aac (native))
+[2025-10-27T10:32:55.382Z] stderr: Press [q] to stop, [?] for help
+[2025-10-27T10:32:55.529Z] stderr: [libx264 @ 0xb4000072e6c30600] using SAR=1/1
+[2025-10-27T10:32:55.531Z] stderr: [libx264 @ 0xb4000072e6c30600] using cpu capabilities: ARMv8 NEON
+[2025-10-27T10:32:55.540Z] stderr: [libx264 @ 0xb4000072e6c30600] profile High, level 4.2, 4:2:0, 8-bit
+[2025-10-27T10:32:55.542Z] stderr: [libx264 @ 0xb4000072e6c30600] 264 - core 164 - H.264/MPEG-4 AVC codec - Copyleft 2003-2024 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=2 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=12 lookahead_threads=4 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=120 keyint_min=12 scenecut=40 intra_refresh=0 rc_lookahead=10 rc=cbr mbtree=1 bitrate=6000 ratetol=1.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 vbv_maxrate=6000 vbv_bufsize=12000 nal_hrd=none filler=0 ip_ratio=1.40 aq=1:1.00
+Output #0, flv, to 'rtmp://a.rtmp.youtube.com/live2/xkxe-1tdg-d3tk-6ydy-ft0k':
+  Metadata:
+    encoder         : Lavf61.7.100
+  Stream #0:0: Video: h264 ([7][0][0][0] / 0x0007), yuv420p(tv, progressive), 1920x1080 [SAR 1:1 DAR 16:9], q=2-31, 6000 kb/s, 60 fps, 1k tbn
+      Metadata:
+        variant_bitrate : 2093382
+        encoder         : Lavc61.19.101 libx264
+      Side data:
+        cpb: bitrate max/min/avg: 6000000/0/6000000 buffer size: 12000000 vbv_delay: N/A
+  Stream #0:1: Audio: aac (LC) ([10][0][0][0] / 0x000A), 44100 Hz, stereo, fltp, 160 kb/s
+      Metadata:
+        variant_bitrate : 2093382
+        encoder         : Lavc61.19.101 aac
+[2025-10-27T10:32:55.883Z] stderr: frame=    0 fps=0.0 q=0.0 size=       0KiB time=N/A bitrate=N/A dup=16 drop=0 speed=N/A
+[2025-10-27T10:32:56.383Z] stderr: frame=    0 fps=0.0 q=0.0 size=       0KiB time=N/A bitrate=N/A dup=22 drop=0 speed=N/A
+[2025-10-27T10:32:56.885Z] stderr: frame=   16 fps= 11 q=28.0 size=     271KiB time=00:00:00.25 bitrate=8873.8kbits/s dup=32 drop=0 speed=0.167x
+[2025-10-27T10:32:57.383Z] stderr: frame=   30 fps= 15 q=30.0 size=     415KiB time=00:00:00.46 bitrate=7279.2kbits/s dup=40 drop=0 speed=0.233x
+[2025-10-27T10:32:57.884Z] stderr: frame=   40 fps= 16 q=30.0 size=     537KiB time=00:00:00.63 bitrate=6950.0kbits/s dup=45 drop=0 speed=0.253x
+[2025-10-27T10:32:58.384Z] stderr: frame=   58 fps= 19 q=30.0 size=     735KiB time=00:00:00.93 bitrate=6455.3kbits/s dup=54 drop=0 speed=0.311x
+[2025-10-27T10:32:58.884Z] stderr: frame=   72 fps= 21 q=30.0 size=     915KiB time=00:00:01.16 bitrate=6425.7kbits/s dup=64 drop=0 speed=0.333x
+[2025-10-27T10:32:59.385Z] stderr: frame=   86 fps= 21 q=28.0 size=    1086KiB time=00:00:01.40 bitrate=6353.8kbits/s dup=72 drop=0 speed=0.35x
+[2025-10-27T10:32:59.885Z] stderr: frame=  100 fps= 22 q=29.0 size=    1281KiB time=00:00:01.63 bitrate=6425.3kbits/s dup=80 drop=0 speed=0.363x
+[2025-10-27T10:33:00.385Z] stderr: frame=  107 fps= 21 q=32.0 size=    1343KiB time=00:00:01.75 bitrate=6286.9kbits/s dup=84 drop=0 speed=0.35x
+[2025-10-27T10:33:00.885Z] stderr: frame=  121 fps= 22 q=32.0 size=    1523KiB time=00:00:01.98 bitrate=6288.9kbits/s dup=92 drop=0 speed=0.36x
+[2025-10-27T10:33:01.386Z] stderr: frame=  121 fps= 20 q=33.0 size=    1523KiB time=00:00:02.06 bitrate=6035.3kbits/s dup=97 drop=0 speed=0.344x
+[2025-10-27T10:33:01.886Z] stderr: frame=  122 fps= 19 q=33.0 size=    1763KiB time=00:00:02.08 bitrate=6930.6kbits/s dup=97 drop=0 speed=0.32x
+[2025-10-27T10:33:02.386Z] stderr: frame=  128 fps= 18 q=33.0 size=    1815KiB time=00:00:02.15 bitrate=6914.3kbits/s dup=99 drop=0 speed=0.307x
+[2025-10-27T10:33:02.886Z] stderr: frame=  130 fps= 17 q=33.0 size=    1843KiB time=00:00:02.21 bitrate=6810.1kbits/s dup=101 drop=0 speed=0.295x
+[2025-10-27T10:33:03.387Z] stderr: frame=  135 fps= 17 q=33.0 size=    1898KiB time=00:00:02.31 bitrate=6711.5kbits/s dup=104 drop=0 speed=0.289x
+[2025-10-27T10:33:03.888Z] stderr: frame=  137 fps= 16 q=33.0 size=    1925KiB time=00:00:02.33 bitrate=6758.0kbits/s dup=106 drop=0 speed=0.274x
+[2025-10-27T10:33:04.388Z] stderr: frame=  142 fps= 16 q=33.0 size=    1975KiB time=00:00:02.36 bitrate=6836.2kbits/s dup=106 drop=0 speed=0.263x
+[2025-10-27T10:33:04.889Z] stderr: frame=  144 fps= 15 q=33.0 size=    1999KiB time=00:00:02.46 bitrate=6639.6kbits/s dup=110 drop=0 speed=0.259x
+[2025-10-27T10:33:05.389Z] stderr: frame=  144 fps= 14 q=33.0 size=    1999KiB time=00:00:02.46 bitrate=6639.6kbits/s dup=110 drop=0 speed=0.247x
+[2025-10-27T10:33:05.889Z] stderr: frame=  144 fps= 14 q=33.0 size=    1999KiB time=00:00:02.46 bitrate=6639.6kbits/s dup=110 drop=0 speed=0.235x
+[2025-10-27T10:33:06.389Z] stderr: frame=  151 fps= 14 q=33.0 size=    2145KiB time=00:00:02.53 bitrate=6935.1kbits/s dup=112 drop=0 speed=0.23x
+[2025-10-27T10:33:06.889Z] stderr: frame=  153 fps= 13 q=33.0 size=    2173KiB time=00:00:02.56 bitrate=6934.4kbits/s dup=114 drop=0 speed=0.223x
+[2025-10-27T10:33:07.389Z] stderr: frame=  158 fps= 13 q=33.0 size=    2245KiB time=00:00:02.63 bitrate=6983.2kbits/s dup=115 drop=0 speed=0.219x
+[2025-10-27T10:33:07.890Z] stderr: frame=  162 fps= 13 q=33.0 size=    2268KiB time=00:00:02.75 bitrate=6755.1kbits/s dup=119 drop=0 speed=0.22x
+[2025-10-27T10:33:08.391Z] stderr: frame=  165 fps= 13 q=33.0 size=    2299KiB time=00:00:02.80 bitrate=6726.5kbits/s dup=121 drop=0 speed=0.215x
+[2025-10-27T10:33:08.890Z] stderr: frame=  169 fps= 13 q=33.0 size=    2357KiB time=00:00:02.86 bitrate=6734.7kbits/s dup=123 drop=0 speed=0.212x
+[2025-10-27T10:33:09.391Z] stderr: frame=  172 fps= 12 q=33.0 size=    2380KiB time=00:00:02.95 bitrate=6608.6kbits/s dup=127 drop=0 speed=0.211x
+[2025-10-27T10:33:09.892Z] stderr: frame=  176 fps= 12 q=33.0 size=    2438KiB time=00:00:03.01 bitrate=6620.5kbits/s dup=128 drop=0 speed=0.208x
+[2025-10-27T10:33:10.393Z] stderr: frame=  181 fps= 12 q=33.0 size=    2491KiB time=00:00:03.05 bitrate=6690.1kbits/s dup=132 drop=0 speed=0.203x
+[2025-10-27T10:33:10.892Z] stderr: frame=  183 fps= 12 q=33.0 size=    2519KiB time=00:00:03.06 bitrate=6729.1kbits/s dup=132 drop=0 speed=0.198x
+[2025-10-27T10:33:11.393Z] stderr: frame=  185 fps= 12 q=33.0 size=    2549KiB time=00:00:03.10 bitrate=6734.9kbits/s dup=132 drop=0 speed=0.194x
+[2025-10-27T10:33:11.895Z] stderr: frame=  189 fps= 11 q=33.0 size=    2600KiB time=00:00:03.18 bitrate=6689.6kbits/s dup=136 drop=0 speed=0.193x
+[2025-10-27T10:33:12.400Z] stderr: frame=  190 fps= 11 q=33.0 size=    2628KiB time=00:00:03.21 bitrate=6693.4kbits/s dup=136 drop=0 speed=0.189x
+[2025-10-27T10:33:12.895Z] stderr: frame=  192 fps= 11 q=33.0 size=    2630KiB time=00:00:03.25 bitrate=6628.4kbits/s dup=137 drop=0 speed=0.186x
+[2025-10-27T10:33:13.396Z] stderr: frame=  195 fps= 11 q=33.0 size=    2658KiB time=00:00:03.30 bitrate=6598.2kbits/s dup=139 drop=0 speed=0.183x
+[2025-10-27T10:33:13.896Z] stderr: frame=  202 fps= 11 q=33.0 size=    2738KiB time=00:00:03.35 bitrate=6694.5kbits/s dup=141 drop=0 speed=0.181x
+[2025-10-27T10:33:14.397Z] stderr: frame=  204 fps= 11 q=33.0 size=    2767KiB time=00:00:03.43 bitrate=6602.9kbits/s dup=143 drop=0 speed=0.181x
+[2025-10-27T10:33:14.897Z] stderr: frame=  208 fps= 11 q=33.0 size=    2822KiB time=00:00:03.48 bitrate=6636.8kbits/s dup=145 drop=0 speed=0.179x
+[2025-10-27T10:33:15.397Z] stderr: frame=  213 fps= 11 q=33.0 size=    2881KiB time=00:00:03.58 bitrate=6585.3kbits/s dup=149 drop=0 speed=0.179x
+[2025-10-27T10:33:15.897Z] stderr: frame=  213 fps= 10 q=33.0 size=    2881KiB time=00:00:03.58 bitrate=6585.3kbits/s dup=149 drop=0 speed=0.175x
+[2025-10-27T10:33:16.398Z] stderr: frame=  222 fps= 11 q=33.0 size=    2967KiB time=00:00:03.71 bitrate=6540.0kbits/s dup=153 drop=0 speed=0.177x
+[2025-10-27T10:33:16.899Z] stderr: frame=  227 fps= 11 q=33.0 size=    3031KiB time=00:00:03.81 bitrate=6505.7kbits/s dup=156 drop=0 speed=0.177x
+[2025-10-27T10:33:17.399Z] stderr: frame=  232 fps= 11 q=33.0 size=    3084KiB time=00:00:03.91 bitrate=6449.9kbits/s dup=159 drop=0 speed=0.178x
+[2025-10-27T10:33:17.900Z] stderr: frame=  234 fps= 10 q=33.0 size=    3114KiB time=00:00:03.93 bitrate=6485.1kbits/s dup=160 drop=0 speed=0.175x
+[2025-10-27T10:33:18.401Z] stderr: frame=  238 fps= 10 q=33.0 size=    3169KiB time=00:00:03.96 bitrate=6544.7kbits/s dup=162 drop=0 speed=0.172x
+[2025-10-27T10:33:18.901Z] stderr: frame=  241 fps= 10 q=33.0 size=    3198KiB time=00:00:04.06 bitrate=6442.5kbits/s dup=167 drop=0 speed=0.173x
+[2025-10-27T10:33:19.402Z] stderr: frame=  241 fps= 10 q=33.0 size=    3198KiB time=00:00:04.06 bitrate=6442.5kbits/s dup=167 drop=0 speed=0.169x
+[2025-10-27T10:33:19.903Z] stderr: frame=  241 fps=9.8 q=33.0 size=    3198KiB time=00:00:04.06 bitrate=6442.5kbits/s dup=167 drop=0 speed=0.166x
+[2025-10-27T10:33:20.404Z] stderr: frame=  241 fps=9.6 q=33.0 size=    3198KiB time=00:00:04.06 bitrate=6442.5kbits/s dup=167 drop=0 speed=0.163x
+[2025-10-27T10:33:20.905Z] stderr: frame=  241 fps=9.4 q=33.0 size=    3198KiB time=00:00:04.06 bitrate=6442.5kbits/s dup=167 drop=0 speed=0.159x
+[2025-10-27T10:33:21.406Z] stderr: frame=  241 fps=9.3 q=33.0 size=    3198KiB time=00:00:04.06 bitrate=6442.5kbits/s dup=167 drop=0 speed=0.156x
+[2025-10-27T10:33:21.908Z] stderr: frame=  242 fps=9.1 q=33.0 size=    3396KiB time=00:00:04.10 bitrate=6784.4kbits/s dup=167 drop=0 speed=0.155x
+[2025-10-27T10:33:22.408Z] stderr: frame=  248 fps=9.2 q=33.0 size=    3441KiB time=00:00:04.18 bitrate=6737.6kbits/s dup=171 drop=0 speed=0.155x
+[2025-10-27T10:33:22.909Z] stderr: frame=  248 fps=9.0 q=33.0 size=    3441KiB time=00:00:04.18 bitrate=6737.6kbits/s dup=171 drop=0 speed=0.152x
+[2025-10-27T10:33:23.411Z] stderr: frame=  248 fps=8.8 q=33.0 size=    3441KiB time=00:00:04.18 bitrate=6737.6kbits/s dup=171 drop=0 speed=0.149x
+[2025-10-27T10:33:23.911Z] stderr: frame=  248 fps=8.7 q=33.0 size=    3441KiB time=00:00:04.18 bitrate=6737.6kbits/s dup=171 drop=0 speed=0.147x
+[2025-10-27T10:33:24.412Z] stderr: frame=  248 fps=8.5 q=33.0 size=    3441KiB time=00:00:04.18 bitrate=6737.6kbits/s dup=171 drop=0 speed=0.144x
+[2025-10-27T10:33:24.912Z] stderr: frame=  252 fps=8.5 q=33.0 size=    3496KiB time=00:00:04.23 bitrate=6764.5kbits/s dup=172 drop=0 speed=0.143x
+[2025-10-27T10:33:25.413Z] stderr: frame=  252 fps=8.4 q=33.0 size=    3496KiB time=00:00:04.23 bitrate=6764.5kbits/s dup=172 drop=0 speed=0.141x
+[2025-10-27T10:33:25.913Z] stderr: frame=  264 fps=8.6 q=33.0 size=    3629KiB time=00:00:04.45 bitrate=6680.7kbits/s dup=181 drop=0 speed=0.146x
+[2025-10-27T10:33:26.413Z] stderr: frame=  266 fps=8.6 q=33.0 size=    3653KiB time=00:00:04.46 bitrate=6698.9kbits/s dup=181 drop=0 speed=0.144x
+[2025-10-27T10:33:26.913Z] stderr: frame=  271 fps=8.6 q=33.0 size=    3708KiB time=00:00:04.56 bitrate=6651.8kbits/s dup=186 drop=0 speed=0.145x
+[2025-10-27T10:33:27.420Z] stderr: frame=  275 fps=8.6 q=33.0 size=    3763KiB time=00:00:04.63 bitrate=6652.8kbits/s dup=186 drop=0 speed=0.145x
+[2025-10-27T10:33:27.917Z] stderr: frame=  278 fps=8.5 q=33.0 size=    3792KiB time=00:00:04.70 bitrate=6609.5kbits/s dup=193 drop=0 speed=0.144x
+[2025-10-27T10:33:28.418Z] stderr: frame=  285 fps=8.6 q=33.0 size=    3849KiB time=00:00:04.78 bitrate=6592.7kbits/s dup=194 drop=0 speed=0.145x
+[2025-10-27T10:33:28.920Z] stderr: frame=  287 fps=8.6 q=33.0 size=    3873KiB time=00:00:04.83 bitrate=6564.1kbits/s dup=197 drop=0 speed=0.144x
+[2025-10-27T10:33:29.419Z] stderr: frame=  289 fps=8.5 q=33.0 size=    3898KiB time=00:00:04.85 bitrate=6584.2kbits/s dup=197 drop=0 speed=0.142x
+[2025-10-27T10:33:29.921Z] stderr: frame=  289 fps=8.4 q=33.0 size=    3898KiB time=00:00:04.85 bitrate=6584.2kbits/s dup=197 drop=0 speed=0.14x
+[2025-10-27T10:33:30.424Z] stderr: frame=  290 fps=8.3 q=33.0 size=    4005KiB time=00:00:04.90 bitrate=6695.7kbits/s dup=197 drop=0 speed=0.14x
+[2025-10-27T10:33:30.924Z] stderr: frame=  293 fps=8.2 q=33.0 size=    4024KiB time=00:00:04.93 bitrate=6681.9kbits/s dup=199 drop=0 speed=0.139x
+[2025-10-27T10:33:31.426Z] stderr: frame=  301 fps=8.4 q=33.0 size=    4096KiB time=00:00:05.08 bitrate=6601.5kbits/s dup=206 drop=0 speed=0.141x
+[2025-10-27T10:33:31.925Z] stderr: frame=  305 fps=8.3 q=33.0 size=    4131KiB time=00:00:05.16 bitrate=6549.6kbits/s dup=208 drop=0 speed=0.141x
+[2025-10-27T10:33:32.425Z] stderr: frame=  309 fps=8.3 q=33.0 size=    4164KiB time=00:00:05.20 bitrate=6559.2kbits/s dup=210 drop=0 speed=0.14x
+[2025-10-27T10:33:32.927Z] stderr: frame=  312 fps=8.3 q=33.0 size=    4208KiB time=00:00:05.23 bitrate=6587.2kbits/s dup=211 drop=0 speed=0.139x
+[2025-10-27T10:33:33.426Z] stderr: frame=  316 fps=8.3 q=33.0 size=    4227KiB time=00:00:05.30 bitrate=6533.3kbits/s dup=213 drop=0 speed=0.139x
+[2025-10-27T10:33:33.927Z] stderr: frame=  317 fps=8.2 q=33.0 size=    4249KiB time=00:00:05.31 bitrate=6547.4kbits/s dup=213 drop=0 speed=0.138x
+[2025-10-27T10:33:34.427Z] stderr: frame=  317 fps=8.1 q=33.0 size=    4249KiB time=00:00:05.31 bitrate=6547.4kbits/s dup=213 drop=0 speed=0.136x
+[2025-10-27T10:33:34.928Z] stderr: frame=  320 fps=8.1 q=33.0 size=    4252KiB time=00:00:05.36 bitrate=6490.9kbits/s dup=215 drop=0 speed=0.136x
+[2025-10-27T10:33:35.428Z] stderr: frame=  320 fps=8.0 q=33.0 size=    4252KiB time=00:00:05.36 bitrate=6490.9kbits/s dup=215 drop=0 speed=0.134x
+[2025-10-27T10:33:35.928Z] stderr: frame=  320 fps=7.9 q=33.0 size=    4252KiB time=00:00:05.36 bitrate=6490.9kbits/s dup=215 drop=0 speed=0.132x
+[2025-10-27T10:33:36.430Z] stderr: frame=  320 fps=7.8 q=33.0 size=    4252KiB time=00:00:05.36 bitrate=6490.9kbits/s dup=215 drop=0 speed=0.131x
+[2025-10-27T10:33:36.930Z] stderr: frame=  320 fps=7.7 q=33.0 size=    4252KiB time=00:00:05.36 bitrate=6490.9kbits/s dup=215 drop=0 speed=0.129x
+[2025-10-27T10:33:37.431Z] stderr: frame=  320 fps=7.6 q=33.0 size=    4252KiB time=00:00:05.36 bitrate=6490.9kbits/s dup=215 drop=0 speed=0.128x
+[2025-10-27T10:33:37.931Z] stderr: frame=  320 fps=7.5 q=33.0 size=    4252KiB time=00:00:05.36 bitrate=6490.9kbits/s dup=215 drop=0 speed=0.126x
+[2025-10-27T10:33:38.431Z] stderr: frame=  335 fps=7.8 q=33.0 size=    4474KiB time=00:00:05.55 bitrate=6603.1kbits/s dup=221 drop=0 speed=0.129x
+[2025-10-27T10:33:38.931Z] stderr: frame=  338 fps=7.8 q=33.0 size=    4474KiB time=00:00:05.65 bitrate=6487.5kbits/s dup=225 drop=0 speed=0.13x
+[2025-10-27T10:33:39.432Z] stderr: frame=  342 fps=7.8 q=33.0 size=    4506KiB time=00:00:05.73 bitrate=6439.0kbits/s dup=228 drop=0 speed=0.13x
+[2025-10-27T10:33:39.932Z] stderr: frame=  347 fps=7.8 q=33.0 size=    4566KiB time=00:00:05.81 bitrate=6430.1kbits/s dup=230 drop=0 speed=0.131x
+[2025-10-27T10:33:40.433Z] stderr: frame=  349 fps=7.7 q=33.0 size=    4599KiB time=00:00:05.83 bitrate=6458.0kbits/s dup=232 drop=0 speed=0.129x
+[2025-10-27T10:33:40.932Z] stderr: frame=  349 fps=7.7 q=33.0 size=    4599KiB time=00:00:05.83 bitrate=6458.0kbits/s dup=232 drop=0 speed=0.128x
+[2025-10-27T10:33:41.171Z] Stop requested (SIGINT).
+[2025-10-27T10:34:05.083Z] stderr: [flv @ 0xb4000072e6d82f80] Failed to update header with correct duration.
+[flv @ 0xb4000072e6d82f80] Failed to update header with correct filesize.
+[out#0/flv @ 0xb4000072e6df3780] video:6065KiB audio:147KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.238427%
+frame=  464 fps=6.7 q=-1.0 Lsize=    6227KiB time=00:00:07.70 bitrate=6624.4kbits/s dup=280 drop=0 speed=0.11x
+[2025-10-27T10:34:05.094Z] stderr: [libx264 @ 0xb4000072e6c30600] frame I:5     Avg QP:25.01  size:195383
+[libx264 @ 0xb4000072e6c30600] frame P:176   Avg QP:29.72  size: 28772
+[libx264 @ 0xb4000072e6c30600] frame B:283   Avg QP:31.97  size:   597
+[libx264 @ 0xb4000072e6c30600] consecutive B-frames:  1.3% 40.1% 36.2% 22.4%
+[libx264 @ 0xb4000072e6c30600] mb I  I16..4:  7.5% 24.7% 67.8%
+[libx264 @ 0xb4000072e6c30600] mb P  I16..4:  0.4%  0.7%  0.3%  P16..4: 23.2% 17.0% 11.9%  0.0%  0.0%    skip:46.6%
+[libx264 @ 0xb4000072e6c30600] mb B  I16..4:  0.0%  0.0%  0.0%  B16..8:  6.1%  0.2%  0.0%  direct: 0.2%  skip:93.4%  L0:13.5% L1:84.2% BI: 2.3%
+[2025-10-27T10:34:05.095Z] stderr: [libx264 @ 0xb4000072e6c30600] 8x8 transform intra:33.3% inter:24.1%
+[libx264 @ 0xb4000072e6c30600] coded y,uvDC,uvAC intra: 75.3% 24.7% 3.3% inter: 7.9% 0.5% 0.0%
+[libx264 @ 0xb4000072e6c30600] i16 v,h,dc,p: 36% 45% 16%  4%
+[libx264 @ 0xb4000072e6c30600] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 26% 33% 17%  2%  4%  3%  3%  4%  6%
+[libx264 @ 0xb4000072e6c30600] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 25% 20% 12%  3% 10%  7%  6%  7%  9%
+[libx264 @ 0xb4000072e6c30600] i8c dc,h,v,p: 64% 24% 10%  2%
+[libx264 @ 0xb4000072e6c30600] Weighted P-Frames: Y:1.1% UV:0.0%
+[libx264 @ 0xb4000072e6c30600] kb/s:6423.78
+[2025-10-27T10:34:05.192Z] stderr: [aac @ 0xb400007231d9d000] Qavg: 1299.805
+[2025-10-27T10:34:05.222Z] stderr: Exiting normally, received signal 2.
+[2025-10-27T10:34:05.264Z] FFmpeg closed (code=255 signal=null).
+[2025-10-27T10:34:05.264Z] Auto-restart in 4s (attempt 2)
+[2025-10-27T10:34:09.266Z] Starting ffmpeg: ffmpeg -re -stream_loop -1 -i http://m.live.net.sa:1935/live/quran/playlist.m3u8 -c:v libx264 -preset veryfast -b:v 6000k -maxrate 6000k -bufsize 12000k -pix_fmt yuv420p -r 60 -g 120 -vf scale=1920:1080 -c:a aac -b:a 160k -ar 44100 -f flv rtmp://a.rtmp.youtube.com/live2/xkxe-1tdg-d3tk-6ydy-ft0k
+[2025-10-27T10:34:09.468Z] stderr: ffmpeg version 7.1.2 Copyright (c) 2000-2025 the FFmpeg developers
+  built with Android (13624864, +pgo, +bolt, +lto, +mlgo, based on r530567e) clang version 19.0.1 (https://android.googlesource.com/toolchain/llvm-project 97a699bf4812a18fb657c2779f5296a4ab2694d2)
+  configuration: --arch=aarch64 --as=aarch64-linux-android-clang --cc=aarch64-linux-android-clang --cxx=aarch64-linux-android-clang++ --nm=llvm-nm --ar=llvm-ar --ranlib=llvm-ranlib --pkg-config=/home/builder/.termux-build/_cache/android-r28c-api-24-v1/bin/pkg-config --strip=llvm-strip --cross-prefix=aarch64-linux-android- --disable-indevs --disable-outdevs --enable-indev=lavfi --disable-static --disable-symver --enable-cross-compile --enable-gnutls --enable-gpl --enable-version3 --enable-jni --enable-lcms2 --enable-libaom --enable-libass --enable-libbluray --enable-libdav1d --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libharfbuzz --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenmpt --enable-libopus --enable-libplacebo --enable-librav1e --enable-librubberband --enable-libsoxr --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtheora --enable-libv4l2 --enable-libvidstab --enable-libvmaf --enable-libvo-amrwbenc --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-libzmq --enable-mediacodec --enable-opencl --enable-shared --prefix=/data/data/com.termux/files/usr --target-os=android --extra-libs=-landroid-glob --enable-vulkan --enable-neon --disable-libfdk-aac
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[2025-10-27T10:34:10.028Z] stderr: [hls @ 0xb4000073d7f80280] Skip ('#EXT-X-VERSION:3')
+[hls @ 0xb4000073d7f80280] Opening 'http://m.live.net.sa:1935/live/quran/chunklist_w675703723.m3u8' for reading
+[2025-10-27T10:34:10.607Z] stderr: [hls @ 0xb4000073d7f80280] Skip ('#EXT-X-VERSION:3')
+[hls @ 0xb4000073d7f80280] Skip ('#EXT-X-DISCONTINUITY-SEQUENCE:0')
+[hls @ 0xb4000073d7f80280] Opening 'http://m.live.net.sa:1935/live/quran/media_w675703723_44541.ts' for reading
+[2025-10-27T10:34:10.979Z] stderr: [hls @ 0xb4000073d7f80280] Opening 'http://m.live.net.sa:1935/live/quran/media_w675703723_44542.ts' for reading
+[2025-10-27T10:34:11.947Z] stderr: Input #0, hls, from 'http://m.live.net.sa:1935/live/quran/playlist.m3u8':
+  Duration: N/A, start: 66377.724644, bitrate: N/A
+  Program 0 
+    Metadata:
+      variant_bitrate : 2093382
+[2025-10-27T10:34:11.948Z] stderr: Stream #0:0: Data: timed_id3 (ID3  / 0x20334449)
+      Metadata:
+        variant_bitrate : 2093382
+  Stream #0:1: Video: h264 (Main) ([27][0][0][0] / 0x001B), yuv420p, 1280x720 [SAR 1:1 DAR 16:9], 26 fps, 26 tbr, 90k tbn
+      Metadata:
+        variant_bitrate : 2093382
+  Stream #0:2: Audio: aac (LC) ([15][0][0][0] / 0x000F), 48000 Hz, stereo, fltp
+      Metadata:
+        variant_bitrate : 2093382
+[2025-10-27T10:34:12.916Z] stderr: Stream mapping:
+  Stream #0:1 -> #0:0 (h264 (native) -> h264 (libx264))
+  Stream #0:2 -> #0:1 (aac (native) -> aac (native))
+[2025-10-27T10:34:12.917Z] stderr: Press [q] to stop, [?] for help
+[2025-10-27T10:34:12.972Z] stderr: [libx264 @ 0xb4000073d7e30600] using SAR=1/1
+[2025-10-27T10:34:12.973Z] stderr: [libx264 @ 0xb4000073d7e30600] using cpu capabilities: ARMv8 NEON
+[2025-10-27T10:34:12.976Z] stderr: [libx264 @ 0xb4000073d7e30600] profile High, level 4.2, 4:2:0, 8-bit
+[2025-10-27T10:34:12.977Z] stderr: [libx264 @ 0xb4000073d7e30600] 264 - core 164 - H.264/MPEG-4 AVC codec - Copyleft 2003-2024 - http://www.videolan.org/x264.html - options: cabac=1 ref=1 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=2 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=12 lookahead_threads=4 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=1 keyint=120 keyint_min=12 scenecut=40 intra_refresh=0 rc_lookahead=10 rc=cbr mbtree=1 bitrate=6000 ratetol=1.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 vbv_maxrate=6000 vbv_bufsize=12000 nal_hrd=none filler=0 ip_ratio=1.40 aq=1:1.00
+Output #0, flv, to 'rtmp://a.rtmp.youtube.com/live2/xkxe-1tdg-d3tk-6ydy-ft0k':
+  Metadata:
+    encoder         : Lavf61.7.100
+  Stream #0:0: Video: h264 ([7][0][0][0] / 0x0007), yuv420p(tv, progressive), 1920x1080 [SAR 1:1 DAR 16:9], q=2-31, 6000 kb/s, 60 fps, 1k tbn
+      Metadata:
+        variant_bitrate : 2093382
+        encoder         : Lavc61.19.101 libx264
+      Side data:
+        cpb: bitrate max/min/avg: 6000000/0/6000000 buffer size: 12000000 vbv_delay: N/A
+  Stream #0:1: Audio: aac (LC) ([10][0][0][0] / 0x000A), 44100 Hz, stereo, fltp, 160 kb/s
+      Metadata:
+        variant_bitrate : 2093382
+        encoder         : Lavc61.19.101 aac
+[2025-10-27T10:34:13.416Z] stderr: frame=    0 fps=0.0 q=0.0 size=       0KiB time=N/A bitrate=N/A dup=21 drop=0 speed=N/A
+[2025-10-27T10:34:13.917Z] stderr: frame=   18 fps= 18 q=34.0 size=     285KiB time=00:00:00.26 bitrate=8743.7kbits/s dup=34 drop=0 speed=0.267x
+[2025-10-27T10:34:14.417Z] stderr: frame=   37 fps= 25 q=30.0 size=     516KiB time=00:00:00.58 bitrate=7243.3kbits/s dup=43 drop=0 speed=0.389x
+[2025-10-27T10:34:14.918Z] stderr: frame=   62 fps= 31 q=31.0 size=     800KiB time=00:00:01.00 bitrate=6554.6kbits/s dup=57 drop=0 speed= 0.5x
+[2025-10-27T10:34:15.418Z] stderr: frame=   85 fps= 34 q=31.0 size=    1099KiB time=00:00:01.38 bitrate=6507.3kbits/s dup=71 drop=0 speed=0.553x
+[2025-10-27T10:34:15.919Z] stderr: frame=  105 fps= 35 q=33.0 size=    1355KiB time=00:00:01.75 bitrate=6340.8kbits/s dup=84 drop=0 speed=0.583x
+[2025-10-27T10:34:16.419Z] stderr: frame=  105 fps= 30 q=33.0 size=    1355KiB time=00:00:01.76 bitrate=6281.0kbits/s dup=86 drop=0 speed=0.504x
+[2025-10-27T10:34:16.920Z] stderr: frame=  105 fps= 26 q=33.0 size=    1355KiB time=00:00:01.76 bitrate=6281.0kbits/s dup=86 drop=0 speed=0.441x
+[2025-10-27T10:34:17.420Z] stderr: frame=  105 fps= 23 q=33.0 size=    1355KiB time=00:00:01.76 bitrate=6281.0kbits/s dup=86 drop=0 speed=0.392x
+[2025-10-27T10:34:17.920Z] stderr: frame=  105 fps= 21 q=33.0 size=    1355KiB time=00:00:01.76 bitrate=6281.0kbits/s dup=86 drop=0 speed=0.353x
+[2025-10-27T10:34:18.420Z] stderr: frame=  107 fps= 19 q=33.0 size=    1386KiB time=00:00:01.88 bitrate=6029.9kbits/s dup=89 drop=0 speed=0.342x
+[2025-10-27T10:34:18.920Z] stderr: frame=  111 fps= 18 q=33.0 size=    1416KiB time=00:00:01.90 bitrate=6105.1kbits/s dup=89 drop=0 speed=0.316x
+[2025-10-27T10:34:19.421Z] stderr: frame=  111 fps= 17 q=33.0 size=    1416KiB time=00:00:01.90 bitrate=6105.1kbits/s dup=89 drop=0 speed=0.292x
+[2025-10-27T10:34:19.921Z] stderr: frame=  111 fps= 16 q=33.0 size=    1416KiB time=00:00:01.90 bitrate=6105.1kbits/s dup=89 drop=0 speed=0.271x
+[2025-10-27T10:34:20.421Z] stderr: frame=  115 fps= 15 q=33.0 size=    1504KiB time=00:00:01.91 bitrate=6430.3kbits/s dup=91 drop=0 speed=0.255x
+[2025-10-27T10:34:20.922Z] stderr: frame=  121 fps= 15 q=34.0 size=    1597KiB time=00:00:02.06 bitrate=6329.5kbits/s dup=95 drop=0 speed=0.258x
+[2025-10-27T10:34:21.422Z] stderr: frame=  121 fps= 14 q=34.0 size=    1597KiB time=00:00:02.06 bitrate=6329.5kbits/s dup=95 drop=0 speed=0.243x
+[2025-10-27T10:34:21.923Z] stderr: frame=  121 fps= 13 q=34.0 size=    1597KiB time=00:00:02.06 bitrate=6329.5kbits/s dup=95 drop=0 speed=0.229x
+[2025-10-27T10:34:22.423Z] stderr: frame=  121 fps= 13 q=34.0 size=    1597KiB time=00:00:02.06 bitrate=6329.5kbits/s dup=95 drop=0 speed=0.217x
+[2025-10-27T10:34:22.924Z] stderr: frame=  122 fps= 12 q=34.0 size=    1824KiB time=00:00:02.08 bitrate=7172.8kbits/s dup=96 drop=0 speed=0.208x
+[2025-10-27T10:34:23.424Z] stderr: frame=  128 fps= 12 q=34.0 size=    1877KiB time=00:00:02.13 bitrate=7208.8kbits/s dup=97 drop=0 speed=0.203x
+[2025-10-27T10:34:23.924Z] stderr: frame=  133 fps= 12 q=34.0 size=    1930KiB time=00:00:02.30 bitrate=6873.9kbits/s dup=104 drop=0 speed=0.209x
+[2025-10-27T10:34:24.425Z] stderr: frame=  137 fps= 12 q=34.0 size=    1978KiB time=00:00:02.36 bitrate=6848.1kbits/s dup=106 drop=0 speed=0.206x
+[2025-10-27T10:34:24.925Z] stderr: frame=  142 fps= 12 q=34.0 size=    2022KiB time=00:00:02.41 bitrate=6855.8kbits/s dup=109 drop=0 speed=0.201x
+[2025-10-27T10:34:25.426Z] stderr: frame=  144 fps= 12 q=34.0 size=    2043KiB time=00:00:02.43 bitrate=6878.6kbits/s dup=109 drop=0 speed=0.195x
+[2025-10-27T10:34:25.926Z] stderr: frame=  144 fps= 11 q=34.0 size=    2043KiB time=00:00:02.43 bitrate=6878.6kbits/s dup=109 drop=0 speed=0.187x
+[2025-10-27T10:34:26.427Z] stderr: frame=  148 fps= 11 q=34.0 size=    2166KiB time=00:00:02.46 bitrate=7194.6kbits/s dup=110 drop=0 speed=0.183x
+[2025-10-27T10:34:26.927Z] stderr: frame=  151 fps= 11 q=34.0 size=    2205KiB time=00:00:02.55 bitrate=7084.0kbits/s dup=113 drop=0 speed=0.182x
+[2025-10-27T10:34:27.427Z] stderr: frame=  178 fps= 12 q=34.0 size=    2469KiB time=00:00:02.93 bitrate=6894.6kbits/s dup=126 drop=0 speed=0.202x
+[2025-10-27T10:34:27.928Z] stderr: frame=  198 fps= 13 q=34.0 size=    2716KiB time=00:00:03.26 bitrate=6809.9kbits/s dup=137 drop=0 speed=0.218x
+[2025-10-27T10:34:28.428Z] stderr: frame=  222 fps= 14 q=33.0 size=    2991KiB time=00:00:03.66 bitrate=6681.7kbits/s dup=152 drop=0 speed=0.236x
+[2025-10-27T10:34:28.928Z] stderr: frame=  223 fps= 14 q=31.0 size=    2991KiB time=00:00:03.78 bitrate=6475.7kbits/s dup=156 drop=0 speed=0.236x
+[2025-10-27T10:34:29.429Z] stderr: frame=  225 fps= 14 q=33.0 size=    3021KiB time=00:00:03.80 bitrate=6513.2kbits/s dup=156 drop=0 speed=0.23x
+[2025-10-27T10:34:29.932Z] stderr: frame=  227 fps= 13 q=33.0 size=    3044KiB time=00:00:03.81 bitrate=6534.1kbits/s dup=157 drop=0 speed=0.224x
+[2025-10-27T10:34:30.431Z] stderr: frame=  234 fps= 13 q=33.0 size=    3102KiB time=00:00:03.95 bitrate=6433.9kbits/s dup=161 drop=0 speed=0.226x
+[2025-10-27T10:34:30.932Z] stderr: frame=  238 fps= 13 q=34.0 size=    3153KiB time=00:00:04.01 bitrate=6429.8kbits/s dup=163 drop=0 speed=0.223x
+[2025-10-27T10:34:31.432Z] stderr: frame=  241 fps= 13 q=34.0 size=    3183KiB time=00:00:04.05 bitrate=6438.8kbits/s dup=165 drop=0 speed=0.219x
+[2025-10-27T10:34:31.933Z] stderr: frame=  241 fps= 13 q=34.0 size=    3183KiB time=00:00:04.05 bitrate=6438.8kbits/s dup=165 drop=0 speed=0.213x
+[2025-10-27T10:34:32.433Z] stderr: frame=  241 fps= 12 q=34.0 size=    3183KiB time=00:00:04.05 bitrate=6438.8kbits/s dup=165 drop=0 speed=0.208x
+[2025-10-27T10:34:32.934Z] stderr: frame=  242 fps= 12 q=34.0 size=    3391KiB time=00:00:04.06 bitrate=6831.6kbits/s dup=165 drop=0 speed=0.203x
+[2025-10-27T10:34:33.433Z] stderr: frame=  246 fps= 12 q=34.0 size=    3415KiB time=00:00:04.11 bitrate=6795.0kbits/s dup=167 drop=0 speed=0.201x
+[2025-10-27T10:34:33.934Z] stderr: frame=  248 fps= 12 q=34.0 size=    3437KiB time=00:00:04.13 bitrate=6812.4kbits/s dup=167 drop=0 speed=0.197x
+[2025-10-27T10:34:34.437Z] stderr: frame=  264 fps= 12 q=34.0 size=    3623KiB time=00:00:04.36 bitrate=6796.9kbits/s dup=175 drop=0 speed=0.203x
+[2025-10-27T10:34:34.934Z] stderr: frame=  274 fps= 12 q=34.0 size=    3789KiB time=00:00:04.53 bitrate=6846.3kbits/s dup=181 drop=0 speed=0.206x
+[2025-10-27T10:34:35.434Z] stderr: frame=  297 fps= 13 q=34.0 size=    4079KiB time=00:00:04.91 bitrate=6795.8kbits/s dup=194 drop=0 speed=0.218x
+[2025-10-27T10:34:35.934Z] stderr: frame=  321 fps= 14 q=34.0 size=    4342KiB time=00:00:05.31 bitrate=6690.1kbits/s dup=210 drop=0 speed=0.231x
+[2025-10-27T10:34:36.435Z] stderr: frame=  347 fps= 15 q=33.0 size=    4616KiB time=00:00:05.75 bitrate=6576.3kbits/s dup=224 drop=0 speed=0.244x
+[2025-10-27T10:34:36.935Z] stderr: frame=  368 fps= 15 q=34.0 size=    4984KiB time=00:00:06.13 bitrate=6657.1kbits/s dup=237 drop=0 speed=0.255x
+[2025-10-27T10:34:37.435Z] stderr: frame=  389 fps= 16 q=33.0 size=    5199KiB time=00:00:06.51 bitrate=6536.1kbits/s dup=251 drop=0 speed=0.266x
+[2025-10-27T10:34:37.936Z] stderr: frame=  393 fps= 16 q=33.0 size=    5247KiB time=00:00:06.60 bitrate=6512.1kbits/s dup=254 drop=0 speed=0.264x
