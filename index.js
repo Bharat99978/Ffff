@@ -1,3 +1,9 @@
+/**
+ * YouTube Live Stream Manager – Termux/Node.js Edition
+ * Author: Bharat Singh
+ * Description: High performance Node.js streaming server with instant restart
+ */
+
 const express = require("express");
 const { spawn } = require("child_process");
 const path = require("path");
@@ -19,7 +25,7 @@ let fpsDropCount = 0;
 function startFFmpeg(streamKey, videoUrl, orientation) {
   const rtmpUrl = `rtmp://a.rtmp.youtube.com/live2/${streamKey}`;
 
-  // video filter chain
+  // build filter chain
   let filters = ["fps=60", "format=yuv420p"];
   if (orientation === "transpose1") filters.unshift("transpose=1");
   if (orientation === "transpose2") filters.unshift("transpose=2");
@@ -51,16 +57,21 @@ function startFFmpeg(streamKey, videoUrl, orientation) {
   ffmpeg.stderr.on("data", (data) => {
     const line = data.toString();
     logs += line;
+
+    // track FPS dynamically
     const match = line.match(/fps=\s*([\d.]+)/);
     if (match) {
       const fps = parseFloat(match[1]);
       if (fps < 40) fpsDropCount++;
       else fpsDropCount = 0;
+
       if (fpsDropCount >= 5) {
-        logs += "\n⚠️ FPS below 40 for 5 cycles — restarting...\n";
+        logs += "\n⚠️ FPS dropped below 40 for 5 cycles — restarting instantly...\n";
         restartFFmpeg(streamKey, videoUrl, orientation);
       }
     }
+
+    // prevent logs from growing too large
     if (logs.length > 25000) logs = logs.slice(-15000);
   });
 
@@ -82,11 +93,12 @@ function stopFFmpeg() {
 }
 
 /**
- * Restart with 5-second delay
+ * Restart instantly (no delay)
  */
 function restartFFmpeg(streamKey, videoUrl, orientation) {
+  logs += "\n🔁 Restarting FFmpeg immediately (no delay)\n";
   stopFFmpeg();
-  setTimeout(() => startFFmpeg(streamKey, videoUrl, orientation), 5000);
+  startFFmpeg(streamKey, videoUrl, orientation);
 }
 
 /* ---------- ROUTES ---------- */
@@ -95,6 +107,7 @@ app.post("/start", (req, res) => {
   if (!streamKey || !videoUrl)
     return res.send("❌ Stream key and video URL required.");
   if (ffmpeg) return res.send("⚠️ Stream already running.");
+
   startFFmpeg(streamKey, videoUrl, orientation);
   res.send("✅ Streaming started.");
 });
