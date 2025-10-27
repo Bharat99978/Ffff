@@ -106,11 +106,7 @@ app.post("/stop", (_, res) => {
 
 app.get("/logs", (_, res) => res.type("text/plain").send(logs));
 
-<<<<<<< HEAD
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-=======
 app.listen(PORT, () => {
   console.log(`🌐 Server running on port ${PORT}`);
   console.log(`🧠 Detected ${os.cpus().length} CPU cores`);
 });
->>>>>>> 849fbdb (Add all files)
